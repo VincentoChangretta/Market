@@ -1,12 +1,17 @@
 import { Link, Route, Routes } from "react-router-dom";
-import "./App.scss"
-import { MainPage } from "./pages/MainPage/MainPage";
-import { AboutPage } from "./pages/AboutPage/AboutPage";
+import { useTheme } from "./provider/ThemeProvider";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { classNames } from "shared/lib/helpers/classNames/classNames";
+
 
 
 export const App = () => {
+    const { theme, toggleTheme } = useTheme()
+
     return (
-        <div className={`app`}>
+        <div className={classNames("app", {}, [theme])}>
+            <button onClick={toggleTheme}>Theme</button>
             <div>
                 <Link to="/">Main</Link>
                 <Link to="/about">About</Link>
