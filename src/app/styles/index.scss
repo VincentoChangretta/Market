@@ -4,8 +4,20 @@
 @use "variables/global";
 
 .app {
+    padding: 20px 0;
     font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100svh;
+}
+
+.container {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: 700;
 }
